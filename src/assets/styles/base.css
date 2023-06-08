@@ -1,0 +1,47 @@
+*{
+	box-sizing: border-box;
+}
+.body{
+	min-width: 1024px;
+	min-height: 780px;
+}
+.pb-2{
+margin-bottom:20px;
+}
+#root{
+margin: 0;
+padding: 0;
+}
+.d-flex{
+	display: flex;
+}
+.container-dashboard{
+	width: 100%;
+	padding: 68px 100px;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+.w75{
+	width: 75%;
+}
+
+.w33{
+	width: 33%;
+}
+
+.w25{
+	width: 25%;
+}
+.w100{
+	width: 100%;
+}
+
+.copiryght{
+	margin-top: 129px;
+}
