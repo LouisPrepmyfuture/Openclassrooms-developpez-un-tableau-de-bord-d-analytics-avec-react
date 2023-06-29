@@ -1,9 +1,14 @@
 *{
 	box-sizing: border-box;
 }
+*:focus {
+	outline: none;
+}
+
 .body{
 	min-width: 1024px;
 	min-height: 780px;
+	font-family: 'Roboto', sans-serif;
 }
 .pb-2{
 margin-bottom:20px;
@@ -12,13 +17,23 @@ margin-bottom:20px;
 margin: 0;
 padding: 0;
 }
+
 .d-flex{
 	display: flex;
 }
 .container-dashboard{
-	width: 100%;
-	padding: 68px 100px;
+  width: 100%;
+  padding: 11px 5%;
 }
+
+.container-char{
+	height: 100%;
+	width: 100%;
+	max-height: 263px;
+	max-width: 258px;
+	border-radius: 5px;
+}
+
 a{
 	text-decoration: none;
 	color: white;
@@ -29,17 +44,21 @@ a{
 }
 .w75{
 	width: 75%;
+	padding: 5px;
 }
 
 .w33{
 	width: 33%;
+	padding: 5px;
 }
 
 .w25{
 	width: 25%;
+	padding: 5px;
 }
 .w100{
 	width: 100%;
+	padding: 5px;
 }
 
 .copiryght{

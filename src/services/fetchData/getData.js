@@ -32,7 +32,6 @@
       return response.json();
     })
     .then((data) => {
-      console.log(data.data);
       return data.data;
     })
     .catch(function (error) {
@@ -53,7 +52,6 @@
       return response.json();
     })
     .then((data) => {
-      console.log(data.data);
       return data.data;
     })
     .catch(function (error) {
@@ -62,26 +60,27 @@
       );
     });
 };
+
 /**
  * call a request to the api
  * return user's performance (energy, endurance, etc.)
  * @param {number} userId - id of the user
  * @returns {promise<object>} - user performance
  */
- const getUserPerformance = async (userId) => {
-	try {
-    const response = await fetch(`http://localhost:3000/user/${userId}/performance`);
-    if (!response.ok) {
-      throw new Error('Erreur lors de la requête');
-    }
-    const data = await response.json();
-    console.log(data); // Utilisez les données récupérées
-  } catch (error) {
-    console.log(error);
-  }
+const getUserPerformance = async (userId) => {
+  return fetch(`http://localhost:3000/user/${userId}/performance`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      return data.data;
+    })
+    .catch(function (error) {
+      console.log(
+        "Il y a eu un problème avec l'opération fetch : " + error.message
+      );
+    });
 };
-
-
 
 const getUser = {
 	getUserMainData,
@@ -89,5 +88,4 @@ const getUser = {
 	getUserActivity,
 	getUserPerformance
 }
-
 export default getUser 
