@@ -11,8 +11,9 @@ import "./style.css"
  * @returns (bar chart <Activity/>)
  */
 function UserActivity({data}) {
-	const CustomTooltip = ({ active, payload }) => {
 
+	
+	const CustomTooltip = ({ active, payload }) => {
 		return active && payload ? (
 			<div className="tool-tip">
 				<div className="poids">{`${payload[0].value} Kg`}</div>

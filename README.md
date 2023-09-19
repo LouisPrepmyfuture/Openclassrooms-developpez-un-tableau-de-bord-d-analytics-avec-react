@@ -3,12 +3,12 @@ SportSee is an application for see you sport statistics, calculate calories in y
 
 Technologies
 JS
-CSS
 React.js (v18.1.0)
 React-router-dom (v6.3.0)
 Recharts (v2.1.10)
+CSS
 Authors
-Laurene COURDE
+Louis Debailleul
 
 Project back-end (without Docker)
 Prerequisites
@@ -35,7 +35,7 @@ The docker container rm micro-api command will allow you to delete your micro-ap
 Project front-end
 clone the repository of SportSee front-end:
 
-git clone https://github.com/Laurene45/LaureneCourde_12_19052022-.git
+git clone https://github.com/LouisPrepmyfuture/sportsee.git
 
 Inside this front-end repository, install dependencies: npm install
 

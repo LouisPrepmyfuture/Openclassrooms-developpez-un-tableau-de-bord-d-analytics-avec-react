@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, {PropTypes} from 'react';
 import {RadarChart, PolarGrid, PolarAngleAxis ,Radar, ResponsiveContainer, PolarRadiusAxis} from 'recharts';
 import "./style.css"
 import { UserPerformanceFormat } from '../../../services/formatedData/formatedUser';
@@ -8,6 +8,7 @@ import { UserPerformanceFormat } from '../../../services/formatedData/formatedUs
  * array Object
  * @returns (<Performance/>)
  */
+
 function UserPerformance({data}) {
 	const formatData = UserPerformanceFormat(data)
     return (
@@ -32,5 +33,9 @@ function UserPerformance({data}) {
 				</ResponsiveContainer>
 			</div>
 	);}
-	
+
+	// UserPerformance.propTypes = {
+	// 	date: PropTypes.instanceOf(Date)
+	// }
+
 	export default UserPerformance

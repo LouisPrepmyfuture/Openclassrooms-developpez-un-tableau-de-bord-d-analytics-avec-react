@@ -1,7 +1,7 @@
 import {React, useState,  useEffect} from "react"
 import {useParams} from 'react-router-dom'
-// import getUser from "../services/fetchData/getDataMocks"
-import getUser from "../services/fetchData/getData"
+ import getUser from "../services/fetchData/getDataMocks"
+//import getUser from "../services/fetchData/getData"
 import UserAverage from "../composents/charts/average/userAverage";
 import UserActivity from "../composents/charts/activity/userActivity"
 import UserPerformance from "../composents/charts/performance/userPerformance";
