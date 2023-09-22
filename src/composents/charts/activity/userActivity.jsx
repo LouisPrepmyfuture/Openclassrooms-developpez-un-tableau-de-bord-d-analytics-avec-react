@@ -13,7 +13,7 @@ import "./style.css"
 */
 function UserActivity({data}) {
 	const CustomTooltip = ({ active, payload }) => {
-		
+
 		return active && payload ? (
 			<div className="tool-tip">
 				<div className="poids">{`${payload[0].value} Kg`}</div>

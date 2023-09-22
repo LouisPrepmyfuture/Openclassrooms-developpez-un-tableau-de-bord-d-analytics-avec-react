@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, {PropTypes} from 'react';
 import {RadarChart, PolarGrid, PolarAngleAxis ,Radar, ResponsiveContainer, PolarRadiusAxis} from 'recharts';
 import { UserPerformanceFormat } from '../../../services/formatedData/formatedUser';
 import PropTypes from 'prop-types';
@@ -8,6 +8,7 @@ import "./style.css"
  * array Object
  * @returns (<Performance/>)
  */
+
 function UserPerformance({data}) {
 	const formatData = UserPerformanceFormat(data)
     return (
@@ -36,5 +37,4 @@ function UserPerformance({data}) {
 	UserPerformance.propTypes = {
 		data: PropTypes.object.isRequired,
 	}
-
 	export default UserPerformance

@@ -39,9 +39,8 @@ function UserAverage({data}) {
 					<Tooltip
           content={(pointInfo) => {
             if (!pointInfo.active) return null;
-            const pointData = formatedData.find((x) => x.day === pointInfo.label);
-
-            return <div className="tool">{pointData.sessionLength} min</div>;
+							const pointData = formatedData.find((x) => x.day === pointInfo.label);
+							return <div className="tool">{pointData.sessionLength} min</div>;
           }}
           cursor={{
             stroke: 'rgba(0, 0, 0, 0.1)',

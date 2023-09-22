@@ -3,12 +3,12 @@ SportSee is an application for see you sport statistics, calculate calories in y
 
 Technologies
 JS
-CSS
 React.js (v18.1.0)
 React-router-dom (v6.3.0)
 Recharts (v2.1.10)
+CSS
 Authors
-Laurene COURDE
+Louis Debailleul
 
 Project back-end (without Docker)
 Prerequisites
