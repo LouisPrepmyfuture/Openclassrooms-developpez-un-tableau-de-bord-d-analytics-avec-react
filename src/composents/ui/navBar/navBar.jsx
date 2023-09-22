@@ -12,7 +12,6 @@ const handleStylePosition = position => {
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			height:90%;
 				& ul{
 					flex-direction: column;
 					width: 100%;
