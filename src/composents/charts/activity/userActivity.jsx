@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart, Bar, Tooltip, Legend, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, Tooltip, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 import { UserActivityFormat } from '../../../services/formatedData/formatedUser';
 import PropTypes from 'prop-types';
 import "./style.css"

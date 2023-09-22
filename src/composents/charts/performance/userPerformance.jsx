@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import {RadarChart, PolarGrid, PolarAngleAxis ,Radar, ResponsiveContainer, PolarRadiusAxis} from 'recharts';
 import { UserPerformanceFormat } from '../../../services/formatedData/formatedUser';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import "./style.css"
 /** @function for showing activity types as radar chart
  *
