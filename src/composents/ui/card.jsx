@@ -3,12 +3,12 @@ import calories from '../../assets/imgs/calories-icon.png';
 import gluiside from '../../assets/imgs/gluisides-icon.png';
 import lipid from '../../assets/imgs/lipides-icon.png';
 import protein from '../../assets/imgs/protein-icon.png';
+import PropTypes from 'prop-types';
+
 import "./style.css"
 
 
 const Card = ({data}) => {
-  const [user, setUser] = useState(data);
-
 	const addSrc = key =>{
 		switch (key) {
 			case "carbohydrate": 
@@ -39,11 +39,11 @@ const Card = ({data}) => {
 		}
 	}
 
-	const renderCards = () => {
-    return Object.keys(user).map((Key) => {
+	const renderCards = (data) => {
+    return Object.keys(data).map((Key) => {
       const KeySupCount = Key.slice(0, -5);
 
-      const value = user[Key]; 
+      const value = data[Key]; 
       return (
         <div className="information-card" key={Key}>
 					<img src={addSrc(KeySupCount)} alt="{KeySupCount}"/>
@@ -62,5 +62,9 @@ const Card = ({data}) => {
     </div>
   );
 };
+
+Card.propTypes = {
+  data: PropTypes.object.isRequired,
+}
 
 export default Card;

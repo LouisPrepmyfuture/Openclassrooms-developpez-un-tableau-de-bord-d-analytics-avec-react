@@ -1,4 +1,4 @@
-import {USER_MAIN_DATA, USER_AVERAGE_SESSIONS, USER_ACTIVITY, USER_PERFORMANCE} from "./mock"
+import { USER_MAIN_DATA, USER_AVERAGE_SESSIONS, USER_ACTIVITY, USER_PERFORMANCE } from "./mock"
 /**
  * Fetch USER_MAIN_DATA from mockDATA
  * @param {Array} data
@@ -6,13 +6,14 @@ import {USER_MAIN_DATA, USER_AVERAGE_SESSIONS, USER_ACTIVITY, USER_PERFORMANCE} 
  * @returns Oject
  */
 
- const getUserMainData = (id) => {
+const getUserMainData = (id) => {
 	let user
 	USER_MAIN_DATA.forEach(element => {
 		if (element.id === parseInt(id)) {
 			user = element
 		}
 	});
+
 	return user
 }
 /**
@@ -29,7 +30,7 @@ const getUserAverageSession = (id) => {
 			averageSession = element.sessions
 		}
 	});
-	return averageSession
+	return {userId:id, sessions:averageSession}
 }
 
 /**
@@ -46,7 +47,7 @@ const getUserActivity = (id) => {
 			activity = element.sessions
 		}
 	});
-	return activity
+	return {userId:id, sessions:activity}
 }
 
 /**
@@ -66,11 +67,11 @@ const getUserPerformance = (id) => {
 	return performance
 }
 
-const getUser2 = {
+const getUser = {
 	getUserMainData,
 	getUserAverageSession,
 	getUserActivity,
 	getUserPerformance
 }
 
-export default getUser2
+export default getUser

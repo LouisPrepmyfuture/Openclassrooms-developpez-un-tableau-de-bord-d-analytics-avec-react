@@ -1,8 +1,8 @@
 import React  from 'react';
 import {RadarChart, PolarGrid, PolarAngleAxis ,Radar, ResponsiveContainer, PolarRadiusAxis} from 'recharts';
-import "./style.css"
 import { UserPerformanceFormat } from '../../../services/formatedData/formatedUser';
-
+import PropTypes from 'prop-types';
+import "./style.css"
 /** @function for showing activity types as radar chart
  *
  * array Object
@@ -32,5 +32,9 @@ function UserPerformance({data}) {
 				</ResponsiveContainer>
 			</div>
 	);}
-	
+
+	UserPerformance.propTypes = {
+		data: PropTypes.object.isRequired,
+	}
+
 	export default UserPerformance

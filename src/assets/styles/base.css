@@ -5,10 +5,15 @@
 	outline: none;
 }
 
-.body{
+html, body{
 	min-width: 1024px;
 	min-height: 780px;
+	height: 100%;
 	font-family: 'Roboto', sans-serif;
+}
+.fullScreen{
+	height: 100%;
+	min-height: 100%;
 }
 .pb-2{
 margin-bottom:20px;
@@ -20,6 +25,11 @@ padding: 0;
 
 .d-flex{
 	display: flex;
+}
+.d-flexCenterCenter{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .container-dashboard{
   width: 100%;

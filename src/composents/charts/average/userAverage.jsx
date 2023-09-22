@@ -1,16 +1,21 @@
 import React from 'react';
 import { LineChart, Tooltip, Line, XAxis ,ReferenceDot , ResponsiveContainer } from 'recharts';
 import { UserAverageFormat } from '../../../services/formatedData/formatedUser';
+import PropTypes from 'prop-types';
+
 import "./style.css"
 
 /** @function for showing duration session to line chart
  *
- * @param array Object 
+ * @param {Object} data
+		{array} data.sessions
+		{object}{day: number, sessionLength: number} data.sessions
  * @return (<UserAverage/>)
  */
 function UserAverage({data}) {
-  
+	console.log(data)
 	const formatedData = UserAverageFormat(data.sessions)
+
   return (
 		<div className="duration-session container-char">
 			<header className="durationSessions__header">
@@ -49,6 +54,9 @@ function UserAverage({data}) {
 				</div>
 		</div>
   )
+}
+UserAverage.propTypes = {
+  data: PropTypes.object.isRequired,
 }
 
 export default UserAverage

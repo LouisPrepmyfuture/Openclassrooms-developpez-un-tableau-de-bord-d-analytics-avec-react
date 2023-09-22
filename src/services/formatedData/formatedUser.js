@@ -46,6 +46,7 @@ export const UserActivityFormat = (dataActivity) =>{
 	dataActivity.forEach((element, index) => {
 		element.add = index + 1
 	})
+	
 	return dataActivity
 }
 

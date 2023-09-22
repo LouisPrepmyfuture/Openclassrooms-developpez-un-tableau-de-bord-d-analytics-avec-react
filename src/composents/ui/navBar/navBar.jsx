@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
 import "./style.css"
 
 const handleStylePosition = position => {
@@ -10,6 +12,7 @@ const handleStylePosition = position => {
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
+			height:90%;
 				& ul{
 					flex-direction: column;
 					width: 100%;
@@ -60,5 +63,9 @@ function NavBar({position ,children}) {
     	{children}
     </NavStyled>
   );
+}
+NavBar.propTypes = {
+  position: PropTypes.string,
+  children: PropTypes.node.isRequired,
 }
 export default NavBar;

@@ -1,7 +1,5 @@
 import {React, useState,  useEffect} from "react"
 import {useParams} from 'react-router-dom'
-// import getUser from "../services/fetchData/getDataMocks"
-import getUser from "../services/fetchData/getData"
 import UserAverage from "../composents/charts/average/userAverage";
 import UserActivity from "../composents/charts/activity/userActivity"
 import UserPerformance from "../composents/charts/performance/userPerformance";
@@ -11,10 +9,14 @@ import icon_1 from '../assets/imgs/icon-1.png';
 import icon_2 from '../assets/imgs/icon-2.png';
 import icon_3 from '../assets/imgs/icon-3.png';
 import icon_4 from '../assets/imgs/icon-4.png';
+import imgLoader from '../assets/imgs/loader-waiting.gif';
 import logo from '../assets/imgs/logo.png';
 import copiryght from '../assets/imgs/Copiryght-2020.png';
 import Card from "../composents/ui/card";
 
+// Get user in DATABASE or get user in MOCK
+import getUser from "../services/fetchData/getDataMocks"
+//import getUser from "../services/fetchData/getData"
 
 /** @function for showing  dashboard  to page
  *
@@ -22,20 +24,12 @@ import Card from "../composents/ui/card";
  * @returns (<Dashboard/>)
  */
 function Dashboard() {
-
 	const { id } = useParams();
-
-	// const user = getUser2.getUserMainData(id)
-	// user.averageSession = getUser2.getUserAverageSession(id)
-	// user.activity = getUser2.getUserActivity(id)
-	// user.performance = getUser2.getUserPerformance(id)
-
 	const [userData, setUserData] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		/** @function calls the user API and returns an object with all its information.
-		 *
 		 * array Object
 		 * @returns (<UserData/>)
 		 */
@@ -53,22 +47,21 @@ function Dashboard() {
 				setIsLoading(false);
       }
     };
-		
     fetchUserData();
   }, [id]);
 	
   return (
 		<>
 		<NavBar>
-		<ul>
-			<li><a href="test"><img src={logo} alt="Logo" height={57}/></a></li>
-			<li><a href="test">Accueil</a></li>
-			<li><a href="test">Profil</a></li>
-			<li><a href="test">Réglage</a></li>
-			<li><a href="test">Communauté</a></li>
-		</ul> 
+			<ul>
+				<li><a href="test"><img src={logo} alt="Logo" height={57}/></a></li>
+				<li><a href="test">Accueil</a></li>
+				<li><a href="test">Profil</a></li>
+				<li><a href="test">Réglage</a></li>
+				<li><a href="test">Communauté</a></li>
+			</ul> 
 		</NavBar>
-		<div className="d-flex">
+		<div className="d-flex fullScreen">
 			<NavBar position="left">
 				<ul>
 					<li className="pb-2"><a href="test"><img src={icon_1} alt="icon_1"/></a></li>
@@ -81,7 +74,7 @@ function Dashboard() {
 			<div className="container-dashboard">
 				<div className="row">
 				{isLoading ? (
-					<div>faire une animation</div>
+					<div className="d-flexCenterCenter"><img src={imgLoader} alt="loader"/></div>
 				): userData ? (
 					<>
 						<div className="w100">
@@ -109,7 +102,9 @@ function Dashboard() {
 						</div>
 					</>
 				) : (
-					<h2>Erreur </h2>
+					<div className="d-flexCenterCenter">
+						<h2>Erreur serveur </h2>
+					</div>
 				)}
 				</div>
 			</div>

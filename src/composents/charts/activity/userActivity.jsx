@@ -1,6 +1,7 @@
 import React from 'react';
 import { BarChart, Bar, Tooltip, Legend, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 import { UserActivityFormat } from '../../../services/formatedData/formatedUser';
+import PropTypes from 'prop-types';
 import "./style.css"
 
 
@@ -9,10 +10,10 @@ import "./style.css"
  * @component
  * @param array 
  * @returns (bar chart <Activity/>)
- */
+*/
 function UserActivity({data}) {
 	const CustomTooltip = ({ active, payload }) => {
-
+		
 		return active && payload ? (
 			<div className="tool-tip">
 				<div className="poids">{`${payload[0].value} Kg`}</div>
@@ -20,10 +21,9 @@ function UserActivity({data}) {
 			</div>
 		) : null;
 	};
-
-		const dataFormat = UserActivityFormat(data.sessions)
-    return (
-			<div className="activity">
+	const dataFormat = UserActivityFormat(data.sessions)
+	return (
+		<div className="activity">
 			<header className="card-header">
 				<h3>Activité quotidienne</h3>
 				<div className="card-indicator">
@@ -42,12 +42,12 @@ function UserActivity({data}) {
 					data={dataFormat}
 					barGap={8}
           margin={{
-            top: 20,
+						top: 20,
             right: 30,
             left: 20,
             bottom: 5,
           }}
-        >
+					>
          
 					<CartesianGrid strokeDasharray='3 3' vertical={false} />
 					
@@ -67,6 +67,10 @@ function UserActivity({data}) {
 	 </div>
 	 );
   }
-
-       
-export default UserActivity
+	
+	UserActivity.propTypes = {
+		data: PropTypes.object.isRequired,
+	}
+	
+	export default UserActivity
+	
